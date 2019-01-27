@@ -8,9 +8,9 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-	"copy-output": "ng build && rm -rf ./../cordova/www/* && cp -r ./dist/daily-change/. ./../cordova/www",
+    "copy-output": "ng build && rm -rf ./../cordova/www/* && cp -r ./dist/daily-change/. ./../cordova/www",
     "android": "npm run copy-output && cd ../cordova && cordova emulate android && cd ../angular && npm run copy-apk",
-	"copy-apk": "cp ../cordova/platforms/android/app/build/outputs/apk/debug/app-debug.apk ../cordova/daily-change.apk",
+    "copy-apk": "cp ../cordova/platforms/android/app/build/outputs/apk/debug/app-debug.apk ../cordova/daily-change.apk",
     "browser": "ng serve --watch --open"
   },
   "private": true,
@@ -24,7 +24,11 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "@ionic-native/core": "^4.16.0",
+    "@ionic-native/sqlite": "^4.16.0",
     "core-js": "^2.5.4",
+    "primeicons": "^1.0.0-beta.10",
+    "primeng": "^6.1.4",
     "rxjs": "~6.2.0",
     "zone.js": "~0.8.26"
   },

@@ -1,0 +1,87 @@
+<div class="contact-form no-bottom input-form">
+    <h1 class="uppercase ultrabold center-text">Preferences</h1>
+    <p class="small-text center-text color-blue-dark half-bottom">Enter your savings goal information</p>
+    <form action="php/contact.php" method="post" class="contactForm" id="preferencesForm">
+        <fieldset>
+            <div class="formValidationError bg-red-dark" id="goalTitleFieldError" style="display: none;">
+                <p class="center-text uppercase small-text color-white">Title is required!</p>
+            </div>
+            <div class="formValidationError bg-red-dark" id="targetFieldError" style="display: none;">
+                <p class="center-text uppercase small-text color-white">Savings target is required!</p>
+            </div>
+            <div class="formValidationError bg-red-dark" id="currencyFieldError" style="display: none;">
+                <p class="center-text uppercase small-text color-white">Currency is required!</p>
+            </div>
+            <div class="formValidationError bg-red-dark" id="targetDateError" style="display: none;">
+                <p class="center-text uppercase small-text color-white">Target Date is required!</p>
+            </div>
+            <div class="formFieldWrap">
+                <label class="field-title contactNameField">Goal Title:<span>(required)</span></label>
+                <input type="number" value="" class="contactField requiredField fieldHasError" name="target" [(ngModel)]="model.GoalTitle">
+            </div>
+            <div class="formFieldWrap">
+                <label class="field-title contactNameField">Savings Target:<span>(required)</span></label>
+                <input type="number" value="" class="contactField requiredField fieldHasError" name="target" [(ngModel)]="model.SavingsTarget">
+            </div>
+            <div class="formFieldWrap">
+                <label class="field-title contactNameField">Currency:<span>(required)</span></label>
+                <select class="contactField requiredField fieldHasError" id="currency" name="currency" [(ngModel)]="model.Currency" required #currency="ngModel">
+                    <option *ngFor="let currency of currencies" [value]="currency">{{currency}}</option>
+                </select>
+            </div>
+            
+            <div class="formFieldWrap">
+                <label class="field-title contactNameField">Target Date:<span>(required)</span></label>
+                <input type="hidden" [(ngModel)]="model.TargetDate" class="form-control" id="targetDate" name="targetDate" required #targetDate="ngModel" />
+                <p-calendar readonlyInput="true" appendTo="body" [(ngModel)]="model.TargetDate" [touchUI]="true" [minDate]="getMinTargetDate()" [showIcon]="true" name="calendar" [defaultDate]="getMinTargetDate()"></p-calendar>
+            </div>
+            <br/>
+
+            <div class="formSubmitButtonErrorsWrap contactFormButton">
+                <input type="submit" class="buttonWrap button bg-blue-dark button-sm button-rounded uppercase ultrabold contactSubmitButton" id="contactSubmitButton" value="Start Saving" data-formid="preferencesForm">
+            </div>
+        </fieldset>
+    </form>			
+</div>
+
+<!--<div class="content container">
+    <h1 class="uppercase ultrabold center-text">Preferences</h1>
+    <p class="small-text center-text color-blue-dark half-bottom">Enter your savings target</p>
+    <form #preferencesForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="target">Savings Target</label>
+            <input type="number" class="form-control" id="target" name="target" [(ngModel)]="model.SavingsTarget" required #target="ngModel">
+        </div>
+
+        <div [hidden]="target.valid || target.pristine" class="alert alert-danger">
+            Target is required
+        </div>
+
+        <div class="form-group">
+            <label for="currency">Currency</label>
+            <select class="form-control" id="currency" name="currency" [(ngModel)]="model.Currency" required #currency="ngModel">
+                <option *ngFor="let currency of currencies" [value]="currency">{{currency}}</option>
+            </select>
+        </div>
+        {{currency.class}}
+
+        <div [hidden]="currency.valid || currency.untouched" class="alert alert-danger">
+            Currency is required
+        </div>
+    
+        <div class="form-group">
+            <label for="targetDate">Target Date</label><br />
+            
+            <input type="hidden" [(ngModel)]="model.TargetDate" class="form-control" id="targetDate" name="targetDate" required #targetDate="ngModel" />
+            <p-calendar readonlyInput="true" appendTo="body" [(ngModel)]="model.TargetDate" [touchUI]="true" [minDate]="getMinTargetDate()" [showIcon]="true" name="calendar" [defaultDate]="getMinTargetDate()"></p-calendar>
+        </div>
+
+        <div [hidden]="targetDate.valid || targetDate.untouched" class="alert alert-danger">
+            Target Date is required
+        </div>
+    
+        <div class="center">
+            <button type="submit" class="button button-blue button-rounded button-center-large uppercase ultrabold" [disabled]="!preferencesForm.form.valid" >Start Saving</button>
+        </div>
+    </form>
+</div>-->
