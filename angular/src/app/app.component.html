@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <base href=".">
+  <base href="/">
 
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" type="text/css" href="/node_modules/primeicons/primeicons.css" />
@@ -13,11 +13,8 @@
 </head>
 
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <!-- todo: set up routing to do this-->
-  <app-preferences *ngIf="!IsInitialized()"></app-preferences>
-
-  <savings-list></savings-list>
+<div style="text-align:center">a
+  <router-outlet></router-outlet>
   <div class="single-slider owl-carousel owl-has-dots-over bg-black">
     <div>
       <div class="cover-content cover-content-center">

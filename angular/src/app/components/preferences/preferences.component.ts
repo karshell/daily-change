@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { AppContextService } from '../../services/app-context.service';
 import { Preferences } from './preferences';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-preferences',
@@ -9,13 +10,12 @@ import { Preferences } from './preferences';
 })
 
 export class PreferencesComponent {
-    @Output() submitted: EventEmitter<any> = new EventEmitter();
     private goalTitle: string;
     private goalAmount: number;
     private goalCurrency: string;
     private goalTargetDate: Date;
 
-    constructor(private appContextService: AppContextService) { }
+    constructor(private appContextService: AppContextService, private router: Router) { }
 
     currencies = ['CAD', 'USD', 'EUR'];
 
@@ -24,7 +24,7 @@ export class PreferencesComponent {
         console.log(preferences);
 
         this.appContextService.SetPreferences(preferences);
-        this.submitted.emit();
+        this.router.navigateByUrl('index');
     }
 
     getMinTargetDate(): Date {
