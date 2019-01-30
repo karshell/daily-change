@@ -1,33 +1,29 @@
 import { Injectable } from '@angular/core';
+import { Preferences } from '../components/preferences/preferences';
 
 @Injectable({
   providedIn: 'root',
 })
 
 export class AppContextService {
-    private appContext: AppContext;
-    
-    constructor() { 
-        this.appContext = new AppContext();
+    private preferences: Preferences;
+
+    constructor() {
+        this.preferences = new Preferences();
     }
 
-    GetContext(): AppContext {
-        return this.appContext;
+    GetPreferences(): Preferences {
+        return this.preferences;
     }
 
-    SetContext(appContext: AppContext) {
-        this.appContext = appContext;
+    SetPreferences(preferences: Preferences) {
+        this.preferences = preferences;
     }
-}
 
-export class AppContext {
-    constructor(
-        public SavingsTarget: number = null,
-        public TargetDate: Date = null,
-        public Currency: string = null
-    ) { }
-    
     public IsInitialized(): boolean {
-        return this.Currency !=null && this.SavingsTarget != null && this.TargetDate != null
+        return this.preferences.Currency != null &&
+        this.preferences.SavingsTarget != null &&
+        this.preferences.TargetDate != null &&
+        this.preferences.GoalTitle != null;
     }
 }

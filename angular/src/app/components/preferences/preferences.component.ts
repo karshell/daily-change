@@ -1,30 +1,36 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { AppContext, AppContextService } from '../../services/app-context.service'
+import { AppContextService } from '../../services/app-context.service';
+import { Preferences } from './preferences';
 
 @Component({
-  selector: 'preferences',
+  selector: 'app-preferences',
   templateUrl: './preferences.component.html',
   styleUrls: ['./preferences.component.css'],
 })
 
 export class PreferencesComponent {
     @Output() submitted: EventEmitter<any> = new EventEmitter();
+    private goalTitle: string;
+    private goalAmount: number;
+    private goalCurrency: string;
+    private goalTargetDate: Date;
 
     constructor(private appContextService: AppContextService) { }
 
     currencies = ['CAD', 'USD', 'EUR'];
 
-    model = new AppContext();
+    onSubmit() {
+        const preferences = new Preferences(this.goalTitle, this.goalAmount, this.goalTargetDate, this.goalCurrency);
+        console.log(preferences);
 
-    onSubmit() { 
-        this.appContextService.SetContext(this.model);
-        this.submitted.emit(); 
+        this.appContextService.SetPreferences(preferences);
+        this.submitted.emit();
     }
 
-    getMinTargetDate(): Date{
-        var today = new Date();
-        var tomorrow = new Date(today.getTime() + (24 * 60 * 60 * 1000));   
+    getMinTargetDate(): Date {
+        const today = new Date();
+        const tomorrow = new Date(today.getTime() + (24 * 60 * 60 * 1000));
 
-        return tomorrow
+        return tomorrow;
     }
 }
