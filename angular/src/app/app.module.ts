@@ -18,7 +18,7 @@ import { IndexComponent } from './components/index/index.component';
 const appRoutes: Routes = [
   { path: 'index', component: IndexComponent },
   { path: 'preferences', component: PreferencesComponent },
-  { path: '**', redirectTo: '/index'}
+  { path: '**', redirectTo: 'index'}
 ];
 
 @NgModule({

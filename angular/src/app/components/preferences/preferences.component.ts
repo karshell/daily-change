@@ -22,7 +22,7 @@ export class PreferencesComponent {
     onSubmit() {
         const preferences = new Preferences(this.goalTitle, this.goalAmount, this.goalTargetDate, this.goalCurrency);
         this.appContextService.SetPreferences(preferences);
-        this.router.navigateByUrl('/index');
+        this.router.navigate(['indexasd']);
     }
 
     getMinTargetDate(): Date {
