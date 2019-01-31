@@ -13,53 +13,37 @@
 </head>
 
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">a
-  <router-outlet></router-outlet>
-  <div class="single-slider owl-carousel owl-has-dots-over bg-black">
-    <div>
-      <div class="cover-content cover-content-center">
-        <h1 class="center-text color-white small-bottom fa-2x">Meet Appeca</h1>
-        <p class="center-text color-white opacity-70 no-bottom">The result of our over 10 years of experience as the only Elite Author on the Mobile Niche.</p>
-      </div>
-      <div class="cover-overlay overlay bg-black opacity-80"></div>
-      <img width="700" class="owl-lazy" src="assets/images/empty.png" data-src="assets/images/pictures/10lq.jpg" data-src="assets/images/pictures/10.jpg">
-    </div>
-    <div>
-      <div class="cover-content cover-content-center">
-        <h1 class="center-text color-white small-bottom">Creative & Unique</h1>
-        <p class="center-text color-white opacity-80 no-bottom">Infuse your style, create your own elements, bring your ideas to life with Appeca.</p>
-      </div>
-      <div class="cover-overlay overlay bg-black opacity-70"></div>
-      <img width="700" class="owl-lazy" src="assets/images/empty.png" data-src="assets/images/pictures/9lq.jpg" data-src-retina="assets/images/pictures/9.jpg">
-    </div>			
-    <div>
-      <div class="cover-content cover-content-center">
-        <h1 class="center-text color-white small-bottom">Smart & Flexible</h1>
-        <p class="center-text color-white opacity-60 no-bottom">Appeca is built for flexibility, every feature is ultra customizable and easy to edit.</p>
-      </div>
-      <div class="cover-overlay overlay bg-black opacity-80"></div>
-      <img width="700" class="owl-lazy" src="assets/images/empty.png" data-src="assets/images/pictures/3lq.jpg" data-src-retina="assets/images/pictures/3.jpg">
-    </div>
-
-    <div>
-      <div class="cover-content cover-content-center">
-        <h1 class="center-text color-white small-bottom">Built for You</h1>
-        <p class="center-text color-white opacity-80 no-bottom">For over 10 years we've been building products for you, we <i class="fa fa-heart color-orange-dark font-12"></i> our customers.</p>
-      </div>
-      <div class="cover-overlay overlay bg-black opacity-60"></div>
-      <img width="700" class="owl-lazy" src="assets/images/empty.png" data-src="assets/images/pictures/6lq.jpg" data-src-retina="assets/images/pictures/6.jpg">
-    </div>			
-  </div>		
-  
-  <div class="homepage-cta full-top full-bottom">
-    <div class="homepage-cta-button">
-      <div class="button-center-large"><a href="#" class="button button-full button-blue button-sm button-rounded uppercase ultrabold">Add Saving</a></div>
-      <p class="center-text no-bottom opacity-50 font-10">There are multiple Call To Action Styles. Swipe me Left</p>
-    </div>
+<div style="text-align:center">
+  <div id="preloader" class="preloader-light">
+    <h1></h1>
+    <div id="preload-spinner"></div>
   </div>
-
-  <div class="decoration decoration-margins"></div>
+    
+  <div id="page-transitions">
+    <div id="header" class="header-logo-left header-dark">
+      <a href="#" class="header-logo"></a>
+      <a href="#" class="header-icon header-icon-1 hamburger-animated" data-deploy-menu="menu-1"></a>
+    </div>
+  
+    <div id="menu-1" class="menu-wrapper menu-light menu-sidebar-left menu-large">
+      <div class="menu-scroll">
+        <div class="menu">
+          <em class="menu-divider">Navigation<i class="fa fa-bars"></i></em>
+          <a class="menu-item close-menu" href="#" (click)="navigate('preferences')"><i class="font-15 fa color-blue-dark fa-cog"></i><strong>Preferences</strong></a>
+          <a class="menu-item close-menu" href="#"><i class="font-14 fa color-orange-dark fa-times"></i><strong>Close</strong></a>
+        </div>
+      </div>
+    </div>
+    
+    <div id="page-content" class="page-content">	
+      <div id="page-content-scroll"><!--Enables this element to be scrolled --> 			
+        <router-outlet></router-outlet>
+      </div>  
+    </div>		
+    <a href="#" class="back-to-top-badge back-to-top-small"><i class="fa fa-angle-up"></i>Back to Top</a>
+  </div>
+  
   
   <div class="footer footer-dark">
-  </div>
+</div>
 

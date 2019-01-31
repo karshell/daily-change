@@ -22,4 +22,9 @@ export class AppComponent {
   IsInitialized(): boolean {
     return this.contextService.IsInitialized();
   }
+
+  navigate(url: string){
+    
+    this.router.navigateByUrl(url);
+  }
 }

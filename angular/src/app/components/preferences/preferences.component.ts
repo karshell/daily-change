@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { AppContextService } from '../../services/app-context.service';
 import { Preferences } from './preferences';
 import { Router } from '@angular/router';
@@ -21,10 +21,8 @@ export class PreferencesComponent {
 
     onSubmit() {
         const preferences = new Preferences(this.goalTitle, this.goalAmount, this.goalTargetDate, this.goalCurrency);
-        console.log(preferences);
-
         this.appContextService.SetPreferences(preferences);
-        this.router.navigateByUrl('index');
+        this.router.navigateByUrl('/index');
     }
 
     getMinTargetDate(): Date {

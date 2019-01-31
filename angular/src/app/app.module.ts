@@ -13,9 +13,10 @@ import { AppContextService } from './services/app-context.service';
 import { SavingsService } from './services/savings.service';
 import { PreferencesComponent } from './components/preferences/preferences.component';
 import { SavingsListComponent } from './components/savings-list/savings-list.component';
+import { IndexComponent } from './components/index/index.component';
 
 const appRoutes: Routes = [
-  { path: 'index', component: AppComponent },
+  { path: 'index', component: IndexComponent },
   { path: 'preferences', component: PreferencesComponent },
   { path: '**', redirectTo: '/index'}
 ];
@@ -24,7 +25,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     PreferencesComponent,
-    SavingsListComponent
+    SavingsListComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
