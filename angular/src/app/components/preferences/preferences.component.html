@@ -33,7 +33,7 @@
             <div class="formFieldWrap">
                 <label class="field-title contactNameField">Target Date:<span>(required)</span></label>
                 <input type="hidden" [(ngModel)]="goalTargetDate" class="form-control" id="targetDate" name="targetDate" required #targetDate="ngModel" />
-                <p-calendar readonlyInput="true" appendTo="body" [(ngModel)]="goalTargetDate" [touchUI]="true" [minDate]="getMinTargetDate()" [showIcon]="true" name="calendar" [defaultDate]="getMinTargetDate()" [style]="{'width':'95%'}" [inputStyle]="{'width':'95%'}"></p-calendar>
+                <p-calendar readonlyInput="true" appendTo="body" [(ngModel)]="goalTargetDate" [touchUI]="true" [showIcon]="true" name="calendar" [defaultDate]="getMinTargetDate()" [style]="{'width':'95%'}" [inputStyle]="{'width':'95%', 'height': '40px'}"></p-calendar>
             </div>
             <br/>
 

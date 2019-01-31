@@ -14,10 +14,10 @@ import { Router } from '@angular/router';
     }
 
     ngOnInit(): void {
-        //if(!this.appContextService.IsInitialized()){
-         //   this.router.navigateByUrl('/preferences');
-        //}
-        
+        if(!this.appContextService.IsInitialized()){
+            this.router.navigateByUrl('/preferences');
+        }
+
         // @ts-ignore
         $('.single-slider').owlCarousel({loop:true, margin:0, nav:true, autoHeight:true, lazyLoad:true, items:1, autoplay: false, autoplayTimeout:7500});
     }

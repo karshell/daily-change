@@ -17,3 +17,15 @@ select {
 .formFieldWrap {
     text-align: left;
 }
+
+.contactForm input {
+    border: solid 1px rgba(0,0,0, 0.3)
+}
+
+.contactForm select {
+    border: solid 1px rgba(0,0,0, 0.3)
+}
+
+.ui-widget {
+    height: 40px;
+}
