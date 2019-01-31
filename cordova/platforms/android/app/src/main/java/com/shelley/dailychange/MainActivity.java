@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.shelley.littlepiggy;
+package com.shelley.dailychange;
 
 import android.os.Bundle;
 import org.apache.cordova.*;

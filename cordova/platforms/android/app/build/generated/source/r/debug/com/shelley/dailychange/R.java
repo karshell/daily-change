@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.shelley.littlepiggy;
+package com.shelley.dailychange;
 
 public final class R {
   public static final class drawable {

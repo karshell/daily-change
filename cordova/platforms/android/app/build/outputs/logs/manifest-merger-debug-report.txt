@@ -52,7 +52,7 @@ ADDED from C:\git\daily-change\cordova\platforms\android\app\src\main\AndroidMan
 		ADDED from C:\git\daily-change\cordova\platforms\android\app\src\main\AndroidManifest.xml:5:18-52
 	android:icon
 		ADDED from C:\git\daily-change\cordova\platforms\android\app\src\main\AndroidManifest.xml:5:53-80
-activity#com.shelley.littlepiggy.MainActivity
+activity#com.shelley.dailychange.MainActivity
 ADDED from C:\git\daily-change\cordova\platforms\android\app\src\main\AndroidManifest.xml:6:9-11:20
 	android:label
 		ADDED from C:\git\daily-change\cordova\platforms\android\app\src\main\AndroidManifest.xml:6:97-134
