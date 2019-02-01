@@ -29,3 +29,19 @@ select {
 .ui-widget {
     height: 40px;
 }
+
+.bg-red-dark {
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 20px;
+    background-color: #c0392b;
+    text-align: center;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 12px;
+}
+
+.bg-red-dark p {
+    line-height: 40px;
+}

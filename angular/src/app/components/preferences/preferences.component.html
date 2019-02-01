@@ -3,17 +3,17 @@
     <p class="small-text center-text color-blue-dark half-bottom">Enter your savings goal information</p>
     <form action="#" method="post" class="contactForm" id="preferencesForm">
         <fieldset>
-            <div class="formValidationError bg-red-dark" id="goalTitleFieldError" style="display: none;">
-                <p class="center-text uppercase small-text color-white">Title is required!</p>
+            <div *ngIf="showTitleError" class="bg-red-dark">
+                <p class="center-text uppercase small-text color-white">Please Enter a Goal Title</p>
             </div>
-            <div class="formValidationError bg-red-dark" id="targetFieldError" style="display: none;">
-                <p class="center-text uppercase small-text color-white">Savings target is required!</p>
+            <div *ngIf="showTargetError" class="bg-red-dark" id="targetFieldError">
+                <p class="center-text uppercase small-text color-white">Please Enter a Valid Target</p>
             </div>
-            <div class="formValidationError bg-red-dark" id="currencyFieldError" style="display: none;">
-                <p class="center-text uppercase small-text color-white">Currency is required!</p>
+            <div *ngIf="showCurrencyError" class="bg-red-dark" id="currencyFieldError">
+                <p class="center-text uppercase small-text color-white">Please select a currency</p>
             </div>
-            <div class="formValidationError bg-red-dark" id="targetDateError" style="display: none;">
-                <p class="center-text uppercase small-text color-white">Target Date is required!</p>
+            <div *ngIf="showDateError" class="bg-red-dark" id="targetDateError">
+                <p class="center-text uppercase small-text color-white">Please select a target date</p>
             </div>
             <div class="formFieldWrap">
                 <label class="field-title contactNameField">Goal Title:<span>(required)</span></label>
